@@ -1,36 +1,28 @@
+/* Função para cancelar o envio do form e conferir a validação dos inputs*/
+
+function dontSend(event) {
+    event.preventDefault();
+    saveName();
+    validate();
+    document.querySelector('#result').textContent = imc.calculateIMC(user.weight.value, user.height.value);
+}
+
+/* Lógica da conta */
 const user = {
-    name: 'user1',
-    weight: 100,
-    height: 1.90
-
-
+    name: localStorage.getItem('nameUser'),
+    weight: document.querySelector('#weight'),
+    height: document.querySelector('#height')
 }
 
 const imc = {
     calculateIMC(weight, height) {
-        return weight / (height * height)
+        return Math.floor(weight / (height * height));
     }
 }
 
-console.log(imc.calculateIMC(user.weight, user.height));
-
-/* Função para cancelar o envio do form */
-
-function dontSend(event) {
-    event.preventDefault();
-    validate();
-
-
-}
-
 const myName = document.querySelector('#name');
-const myWeight = document.querySelector('#weight');
-const myHeight = document.querySelector('#height');
 
-myName.value.replace(',', '.');
-myWeight.value.replace(',', '.');
-myHeight.value.replace(',', '.');
-
+/* Função de validação dos inputs */
 function validate() {
 
     if (myName.value == '') {
@@ -39,15 +31,22 @@ function validate() {
         document.querySelector("#msgName").textContent = '';
     }
 
-    if (myWeight.value == '') {
+    if (user.weight.value == '') {
         document.querySelector('#msgWeight').textContent = 'Peso invalido';
     } else {
         document.querySelector("#msgWeight").textContent = '';
     }
 
-    if (myHeight.value == '') {
+    if (user.height.value == '') {
         document.querySelector('#msgHeight').textContent = 'Altura invalida';
     } else {
         document.querySelector("#msgHeight").textContent = '';
     }
+}
+
+/* Salvando o nome do usuario */
+function saveName() {
+    const nameSave = myName.value;
+
+    localStorage.setItem('nameUser', nameSave);
 }
