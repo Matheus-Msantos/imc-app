@@ -2,20 +2,48 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMC - app</title>
+    <title> IMC - app </title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- JS -->
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
+    <div id="sectionMain">
 
+        <h1>Calculadora <span> de imc </span> </h1>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatem, eum facilis nostrum sit
+            repellendus, magni architecto, adipisci quam officia quo vel dolorum. Officiis nesciunt repudiandae culpa
+            atque asperiores! Commodi provident pariatur error quibusdam? Aperiam quod dolor possimus non cupiditate!
+        </p>
+
+        <form>
+            <label> Nome </label> <br>
+            <input id="name" type="text"> <br>
+
+            <label> Peso </label> <br>
+            <input id="weight" type="text"> <br>
+
+            <label> Altura </label> <br>
+            <input id="height" type="text"> <br> <br>
+
+            <button onclick="dontSend(event)"> Pronto! </button>
+        </form>
+
+        <span id="msgName"></span>
+        <span id="msgWeight"></span>
+        <span id="msgHeight"></span>
+
+    </div>
 </body>
+
+<!-- JS -->
+<script src="js/script.js"></script>
 
 </html>

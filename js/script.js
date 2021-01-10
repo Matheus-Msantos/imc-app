@@ -13,3 +13,41 @@ const imc = {
 }
 
 console.log(imc.calculateIMC(user.weight, user.height));
+
+/* Função para cancelar o envio do form */
+
+function dontSend(event) {
+    event.preventDefault();
+    validate();
+
+
+}
+
+const myName = document.querySelector('#name');
+const myWeight = document.querySelector('#weight');
+const myHeight = document.querySelector('#height');
+
+myName.value.replace(',', '.');
+myWeight.value.replace(',', '.');
+myHeight.value.replace(',', '.');
+
+function validate() {
+
+    if (myName.value == '') {
+        document.querySelector("#msgName").textContent = 'Nome invalido';
+    } else {
+        document.querySelector("#msgName").textContent = '';
+    }
+
+    if (myWeight.value == '') {
+        document.querySelector('#msgWeight').textContent = 'Peso invalido';
+    } else {
+        document.querySelector("#msgWeight").textContent = '';
+    }
+
+    if (myHeight.value == '') {
+        document.querySelector('#msgHeight').textContent = 'Altura invalida';
+    } else {
+        document.querySelector("#msgHeight").textContent = '';
+    }
+}
