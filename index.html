@@ -3,46 +3,94 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> IMC - app </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> IMC - app </title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-    <div id="sectionMain">
+  <div class="container">
 
-        <h1>Calculadora <span> de imc </span> </h1>
+    <div class="screen-full">
 
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatem, eum facilis nostrum sit
-            repellendus, magni architecto, adipisci quam officia quo vel dolorum. Officiis nesciunt repudiandae culpa
-            atque asperiores! Commodi provident pariatur error quibusdam? Aperiam quod dolor possimus non cupiditate!
+      <div class="section-main">
+
+        <h1 class="title-main">Calculadora <span> de imc </span> </h1>
+
+        <p class="about-imc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatem, eum facilis nostrum sit
+          repellendus, magni architecto, adipisci quam officia quo vel dolorum. Officiis nesciunt repudiandae
+          culpa
+          atque asperiores! Commodi provident pariatur error quibusdam? Aperiam quod dolor possimus non
+          cupiditate!
         </p>
 
         <form>
-            <label> Nome </label> <br>
-            <input id="name" type="text"> <br>
 
-            <label> Peso </label> <br>
-            <input id="weight" type="text"> <br>
+          <div class="input-primary">
 
-            <label> Altura </label> <br>
-            <input id="height" type="text"> <br> <br>
+            <label> Nome </label>
 
-            <button onclick="dontSend(event)"> Pronto! </button>
+            <input id="name" type="text" placeholder="Seu nome">
+
+          </div>
+
+          <div class="input-flex">
+
+            <div class="input-gruop">
+
+              <label> Peso </label>
+
+              <div class="input-text">
+
+                <input id="weight" type="text" placeholder="85">
+                <span id="weightSubtitle"> kg </span>
+
+              </div>
+
+            </div>
+
+            <div class="input-gruop">
+
+              <label> Altura </label>
+
+              <div class="input-text">
+
+                <input id="height" type="text" placeholder="1.90">
+                <span id="heightSubtitle"> mt </span>
+
+              </div>
+
+            </div>
+
+            <button class="btn" onclick="dontSend(event)"> Pronto! </button>
+
+          </div>
+
         </form>
 
         <span id="msgName"></span>
         <span id="msgWeight"></span>
         <span id="msgHeight"></span> <br>
-        <span id="result"></span>
-        <!--<span id="tip"></span>-->
+
+      </div>
+
+      <div class="img-full">
+
+      </div>
+
+      <span id="result"></span>
+
+      <!--<span id="tip"></span>-->
 
     </div>
+
+  </div>
+
 </body>
 
 <!-- JS -->
