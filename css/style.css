@@ -148,3 +148,20 @@ form input {
   display: block;
   margin: 3px auto;
 }
+
+.img-flex {
+  flex-basis: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  position: relative;
+  background-image: url('../img/image1.png');
+  background-repeat: no-repeat;
+  width: 368px;
+  height: 368px;
+  align-self: center;
+  border-radius: 50%;
+  box-shadow: 7px 5px 0 13px var(--violetDark);
+}
