@@ -59,11 +59,13 @@ function validate() {
 
     document.querySelector("#msgName").textContent = 'Nome invalido';
     document.getElementById('name').classList.add('show-erro');
+    document.getElementById('erro').classList.add('msg-erro');
 
   } else {
 
     document.querySelector("#msgName").textContent = '';
     document.getElementById('name').classList.remove('show-erro');
+    document.getElementById('erro').classList.remove('msg-erro');
 
   }
 
@@ -72,12 +74,14 @@ function validate() {
     document.querySelector('#msgWeight').textContent = 'Peso invalido';
     document.getElementById('weight').classList.add('show-erro');
     document.getElementById('weightSubtitle').classList.add('show-subtitle');
+    document.getElementById('erro').classList.add('msg-erro');
 
   } else {
 
     document.querySelector("#msgWeight").textContent = '';
     document.getElementById('weight').classList.remove('show-erro');
     document.getElementById('weightSubtitle').classList.remove('show-subtitle');
+    document.getElementById('erro').classList.remove('msg-erro');
 
   }
 
@@ -86,12 +90,14 @@ function validate() {
     document.querySelector('#msgHeight').textContent = 'Altura invalida';
     document.getElementById('height').classList.add('show-erro');
     document.getElementById('heightSubtitle').classList.add('show-subtitle');
+    document.getElementById('erro').classList.add('msg-erro');
 
   } else {
 
     document.querySelector("#msgHeight").textContent = '';
     document.getElementById('height').classList.remove('show-erro');
     document.getElementById('heightSubtitle').classList.remove('show-subtitle');
+    document.getElementById('erro').classList.remove('msg-erro');
 
   }
 

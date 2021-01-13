@@ -72,7 +72,7 @@ form label {
 
 form input {
   background: var(--yellow);
-  padding: 5px;
+  padding: 10px;
   font-size: 17px;
   border-radius: 4px;
   border: none;
@@ -125,7 +125,6 @@ form input {
   outline: none;
 }
 
-
 .show-erro {
   background-color: var(--red);
   border: 1px solid var(--redDark);
@@ -133,4 +132,19 @@ form input {
 
 .input-text > .show-subtitle {
   background-color: var(--redDark) ;
+}
+
+.msg-erro {
+  text-align: center;
+  background-color: var(--red);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  border: 1px solid var(--redDark);
+  width: 30%;
+  margin: 31px auto;
+}
+
+.msg-erro span {
+  display: block;
+  margin: 3px auto;
 }
