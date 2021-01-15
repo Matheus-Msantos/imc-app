@@ -28,6 +28,7 @@ body {
 
 .container{
   width: 85%;
+  padding: 50px;
   margin: 0 auto;
 }
 
@@ -37,7 +38,7 @@ body {
 }
 
 .section-main {
-  align-self: center;
+  
   flex-basis: 50%;
 }
 
@@ -73,7 +74,7 @@ form label {
 form input {
   background: var(--yellow);
   padding: 10px;
-  font-size: 17px;
+  font-size: 15px;
   border-radius: 4px;
   border: none;
   width: 100%;
@@ -93,7 +94,7 @@ form input {
 }
 
 .input-gruop input {
-  padding-right: 55px;
+  padding-right: 53px;
 }
 
 .input-text {
@@ -156,12 +157,48 @@ form input {
 }
 
 .img {
-  position: relative;
   background-image: url('../img/image1.png');
   background-repeat: no-repeat;
   width: 368px;
   height: 368px;
-  align-self: center;
   border-radius: 50%;
   box-shadow: 7px 5px 0 13px var(--violetDark);
 }
+
+.form-none{
+  display: none;
+}
+
+.result-gruop {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: var(--yellow); 
+  width: 300px;
+  height: 136px;
+  font-weight: 700;
+  font-size: 27px;
+  color: var(--violetDark); 
+  box-shadow: 12px 1px 0 inset var(--violet);
+}
+
+.about-tip {
+  color: var(--white);
+  font-family: 'Work sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 23px;
+  margin-left: 10%;
+}
+
+.btn-none {
+  display: none;
+}
+
+.about-tip > .show-btn {
+  display: block;
+  margin-top: 17px;
+}
+
+
