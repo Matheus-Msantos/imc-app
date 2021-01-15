@@ -1,8 +1,6 @@
 /* Função para cancelar o envio do form e conferir a validação dos inputs*/
-
 function dontSend(event) {
   event.preventDefault();
-  saveName();
   validate();
 }
 
@@ -21,6 +19,8 @@ const imc = {
     const normal = account > 18.5 && account <= 24.9;
     const overweight = account > 24.9 && account <= 30
     const obesity = account > 30
+
+    const name = document.querySelector('#nameUser').textContent = user.name;
 
     if (thinness) {
       document.querySelector('#tip').textContent = 'Para ganhar peso de forma saudável e sem ganhar barriga, você deve praticar atividade física, aumentar o volume das refeições e comer a cada 3 horas. Para isso, você deve aumentar o consumo de alimentos integrais e fontes de proteína, como carnes magras, peixes, ovos, arroz integral, feijão e aveia.';
@@ -61,45 +61,62 @@ function validate() {
   if (confirmName != '' && confirmWeight != '' && confirmHeight != '') {
     document.querySelector('#nameUser').textContent = user.name;
     document.querySelector('#result').textContent = resultImcUser;
-
-    if (confirmName == '') {
-      document.querySelector("#msgName").textContent = 'Nome invalido';
-      document.getElementById('name').classList.add('show-erro');
-      document.getElementById('erro').classList.add('msg-erro');
-    } else {
-      document.querySelector("#msgName").textContent = '';
-      document.getElementById('name').classList.remove('show-erro');
-      document.getElementById('erro').classList.remove('msg-erro');
-    }
-
-    if (confirmWeight == '') {
-      document.querySelector('#msgWeight').textContent = 'Peso invalido';
-      document.getElementById('weight').classList.add('show-erro');
-      document.getElementById('weightSubtitle').classList.add('show-subtitle');
-      document.getElementById('erro').classList.add('msg-erro');
-    } else {
-      document.querySelector("#msgWeight").textContent = '';
-      document.getElementById('weight').classList.remove('show-erro');
-      document.getElementById('weightSubtitle').classList.remove('show-subtitle');
-      document.getElementById('erro').classList.remove('msg-erro');
-    }
-
-    if (confirmHeight == '') {
-      document.querySelector('#msgHeight').textContent = 'Altura invalida';
-      document.getElementById('height').classList.add('show-erro');
-      document.getElementById('heightSubtitle').classList.add('show-subtitle');
-      document.getElementById('erro').classList.add('msg-erro');
-    } else {
-      document.querySelector("#msgHeight").textContent = '';
-      document.getElementById('height').classList.remove('show-erro');
-      document.getElementById('heightSubtitle').classList.remove('show-subtitle');
-      document.getElementById('erro').classList.remove('msg-erro');
-    }
-
+    hideForm();
   }
+
+  if (confirmName == '') {
+    document.querySelector("#msgName").textContent = 'Nome invalido';
+    document.getElementById('name').classList.add('show-erro');
+    document.getElementById('erro').classList.add('msg-erro');
+    document.querySelector('#nameUser').textContent = '';
+
+  } else {
+    document.querySelector("#msgName").textContent = '';
+    document.getElementById('name').classList.remove('show-erro');
+    document.getElementById('erro').classList.remove('msg-erro');
+  }
+
+  if (confirmWeight == '') {
+    document.querySelector('#msgWeight').textContent = 'Peso invalido';
+    document.getElementById('weight').classList.add('show-erro');
+    document.getElementById('weightSubtitle').classList.add('show-subtitle');
+    document.getElementById('erro').classList.add('msg-erro');
+  } else {
+    document.querySelector("#msgWeight").textContent = '';
+    document.getElementById('weight').classList.remove('show-erro');
+    document.getElementById('weightSubtitle').classList.remove('show-subtitle');
+    document.getElementById('erro').classList.remove('msg-erro');
+  }
+
+  if (confirmHeight == '') {
+    document.querySelector('#msgHeight').textContent = 'Altura invalida';
+    document.getElementById('height').classList.add('show-erro');
+    document.getElementById('heightSubtitle').classList.add('show-subtitle');
+    document.getElementById('erro').classList.add('msg-erro');
+  } else {
+    document.querySelector("#msgHeight").textContent = '';
+    document.getElementById('height').classList.remove('show-erro');
+    document.getElementById('heightSubtitle').classList.remove('show-subtitle');
+    document.getElementById('erro').classList.remove('msg-erro');
+  }
+
 }
+
 /* Salvando o nome do usuario */
-function saveName() {
+myName.addEventListener("blur", () => {
   const nameSave = myName.value;
   localStorage.setItem('nameUser', nameSave);
+})
+
+/* Escondendo form */
+function hideForm() {
+  document.getElementById('form').classList.add('form-none');
+  document.getElementById('btn').classList.add('show-btn');
+  document.getElementById('resultGruop').classList.add('result-gruop');
+}
+
+/* Refazendo IMC */
+function backImc() {
+  window.location.assign('index.html');
+
 }
