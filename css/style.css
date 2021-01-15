@@ -38,7 +38,6 @@ body {
 }
 
 .section-main {
-  
   flex-basis: 50%;
 }
 
@@ -50,7 +49,7 @@ body {
 }
 
 .title-main span {
-    display: block;
+  display: block;
 }
 
 .about-imc {
@@ -84,7 +83,7 @@ form input {
 }
 
 .input-flex {
-    display: flex;
+  display: flex;
 }
 
 .input-gruop {
@@ -197,6 +196,48 @@ form input {
 .about-tip > .show-btn {
   display: block;
   margin-top: 17px;
+}
+
+
+@media only screen and (max-width: 1227px) {
+  .container {
+    width: 100%;
+  }
+
+  .screen-full {
+    flex-direction: column-reverse;
+  }
+
+  .img-flex {
+    margin-bottom: 25px;
+    justify-content: start;
+    align-items: flex-end;
+  }
+
+  .img {
+    background-size: cover;
+    background-position: center;
+    width: 180px;
+    height: 180px;
+  }
+
+  .title-main span {
+    display: inline;
+  }
+
+  .input-flex {
+    display: block;
+  }
+
+  .btn {
+    text-align: left;
+    padding-left: 15px;
+    width: 100%;
+  }
+  
+  .msg-erro {
+    width: 50%;
+  }
 }
 
 
