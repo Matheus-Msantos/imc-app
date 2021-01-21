@@ -4,23 +4,22 @@ function dontSend(event) {
   validate();
 }
 
-/* Lógica da conta */
+
 const user = {
-  name: localStorage.getItem('nameUser'),
   weight: document.querySelector('#weight'),
   height: document.querySelector('#height')
 }
 
 const imc = {
   calculateIMC(weight, height) {
+    /* Lógica da conta */
+
     const account = Math.ceil(weight / (height * height));
 
     const thinness = account <= 18.5;
     const normal = account > 18.5 && account <= 24.9;
     const overweight = account > 24.9 && account <= 30
     const obesity = account > 30
-
-    const name = document.querySelector('#nameUser').textContent = user.name;
 
     if (thinness) {
       document.querySelector('#tip').textContent = 'Para ganhar peso de forma saudável e sem ganhar barriga, você deve praticar atividade física, aumentar o volume das refeições e comer a cada 3 horas. Para isso, você deve aumentar o consumo de alimentos integrais e fontes de proteína, como carnes magras, peixes, ovos, arroz integral, feijão e aveia.';
@@ -48,18 +47,17 @@ const imc = {
 }
 
 /* Função de validação dos inputs */
-const myName = document.querySelector('#name');
 
 function validate() {
   const resultImcUser = imc.calculateIMC(user.weight.value, user.height.value);
 
-  const confirmName = myName.value;
+  const confirmName = document.querySelector('#name').value;
   const confirmWeight = user.weight.value;
   const confirmHeight = user.height.value;
 
 
   if (confirmName != '' && confirmWeight != '' && confirmHeight != '') {
-    document.querySelector('#nameUser').textContent = user.name;
+    document.querySelector('#nameUser').textContent = document.querySelector('#name').value;
     document.querySelector('#result').textContent = resultImcUser;
     hideForm();
   }
@@ -101,12 +99,6 @@ function validate() {
   }
 
 }
-
-/* Salvando o nome do usuario */
-myName.addEventListener("blur", () => {
-  const nameSave = myName.value;
-  localStorage.setItem('nameUser', nameSave);
-})
 
 /* Escondendo form */
 function hideForm() {
